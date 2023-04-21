@@ -7,6 +7,12 @@
     <groupId>org.psk</groupId>
     <artifactId>SOR</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>server</module>
+        <module>client</module>
+        <module>shared</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
