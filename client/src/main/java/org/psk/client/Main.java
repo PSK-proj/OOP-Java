@@ -1,21 +1,30 @@
 package org.psk.client;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.Objects;
 
 public class Main extends Application {
 
   @Override
-  public void start(Stage stage) {
-    String javaVersion = System.getProperty("java.version");
-    String javafxVersion = System.getProperty("javafx.version");
-    Label l = new Label("KLIENT, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-    Scene scene = new Scene(new StackPane(l), 640, 480);
-    stage.setScene(scene);
-    stage.show();
+    public void start(Stage stage) throws Exception {
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/psk/client/view/menuView.fxml"));
+      Parent root = loader.load();
+      Scene scene = new Scene(root);
+      scene.getStylesheets().add(Main.loadCSS());
+      stage.setScene(scene);
+      stage.setTitle("La Dolce Vita");
+      stage.show();
+  }
+
+  public static String loadCSS() {
+    URL cssURL = Main.class.getResource("/org/psk/client/main.css");
+    return Objects.requireNonNull(cssURL).toExternalForm();
   }
 
 
