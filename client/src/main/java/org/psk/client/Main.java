@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -18,7 +19,8 @@ public class Main extends Application {
       Scene scene = new Scene(root);
       scene.getStylesheets().add(Main.loadCSS());
       stage.setScene(scene);
-      stage.setTitle("La Dolce Vita");
+      stage.setTitle("La Dolce Vita - Menu");
+      stage.getIcons().add(loadLogo());
       stage.show();
   }
 
@@ -26,6 +28,12 @@ public class Main extends Application {
     URL cssURL = Main.class.getResource("/org/psk/client/main.css");
     return Objects.requireNonNull(cssURL).toExternalForm();
   }
+
+  public static Image loadLogo() {
+    URL logoURL = Main.class.getResource("/org/psk/client/images/logo.png");
+    return new Image(Objects.requireNonNull(logoURL).toExternalForm());
+  }
+
 
 
   public static void main(String[] args) {

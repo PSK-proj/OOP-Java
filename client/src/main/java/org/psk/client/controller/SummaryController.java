@@ -20,6 +20,7 @@ public class SummaryController {
       menuView.getStylesheets().add(Main.loadCSS());
 
       Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+      stage.setTitle("La Dolce Vita - Menu");
       stage.setScene(new Scene(menuView));
     } catch (IOException e) {
       e.printStackTrace();
@@ -38,6 +39,7 @@ public class SummaryController {
       confirmationView.getStylesheets().add(Main.loadCSS());
 
       Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+      stage.setTitle("La Dolce Vita - Potwierdzenie");
       stage.setScene(new Scene(confirmationView));
     } catch (IOException e) {
       e.printStackTrace();

@@ -18,10 +18,8 @@ public class MenuController {
 
       summaryView.getStylesheets().add(Main.loadCSS());
 
-      // Pobierz stage z dowolnego elementu, który jest już na scenie (np. przycisku)
       Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-      // Ustaw nową scenę z wczytanym widokiem
+      stage.setTitle("La Dolce Vita - Podsumowanie");
       stage.setScene(new Scene(summaryView));
     } catch (IOException e) {
       e.printStackTrace();

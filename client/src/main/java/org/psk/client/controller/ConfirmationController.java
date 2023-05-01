@@ -19,6 +19,7 @@ public class ConfirmationController {
       menuView.getStylesheets().add(Main.loadCSS());
 
       Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+      stage.setTitle("La Dolce Vita - Menu");
       stage.setScene(new Scene(menuView));
     } catch (IOException e) {
       e.printStackTrace();
