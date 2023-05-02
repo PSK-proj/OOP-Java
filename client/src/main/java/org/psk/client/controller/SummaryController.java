@@ -1,16 +1,23 @@
 package org.psk.client.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.psk.client.Main;
 
 import java.io.IOException;
 
 public class SummaryController {
+  @FXML
+  private Label tableNumberLabel;
+  public void initialize() {
+    tableNumberLabel.setText(String.valueOf(Main.getTableNumber()));
+  }
 
   public void returnToMenu(ActionEvent event) {
     try {

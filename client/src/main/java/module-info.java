@@ -5,6 +5,8 @@ module client {
 
   requires shared;
 
+  requires java.sql;
+
   opens org.psk.client to javafx.fxml;
   exports org.psk.client;
   opens org.psk.client.controller to javafx.fxml;
