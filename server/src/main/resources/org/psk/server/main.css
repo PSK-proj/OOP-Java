@@ -1,0 +1,8 @@
+#mainBox GridPane {
+    -fx-padding: 2 15 2 15;
+}
+
+#historyLabel {
+    -fx-font-size: 30;
+}
+
