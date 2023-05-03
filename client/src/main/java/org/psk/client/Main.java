@@ -6,22 +6,25 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import org.psk.client.model.MACAddress;
+import org.psk.client.model.ConnectionManager;
 import org.psk.client.model.SearchForTableNumber;
 
+import java.io.IOException;
+import java.net.Socket;
 import java.net.URL;
 import java.util.Objects;
 
 public class Main extends Application {
 
   private static int tableNumber;
+  private Socket socket;
 
   @Override
     public void start(Stage stage) throws Exception {
       SearchForTableNumber.search(); // póki co zostawiamy tak na sztywno
-      //Main.testMAC(); // to na później jak już będzie połączenie z serwerem
 
-      FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/psk/client/view/menuView.fxml"));
+
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/psk/client/view/connectionView.fxml"));
       Parent root = loader.load();
       Scene scene = new Scene(root);
       scene.getStylesheets().add(Main.loadCSS());
@@ -29,6 +32,16 @@ public class Main extends Application {
       stage.setTitle("La Dolce Vita - Menu");
       stage.getIcons().add(loadLogo());
       stage.show();
+      stage.setOnCloseRequest(event -> {
+      try {
+        socket = ConnectionManager.getSocket();
+        if (socket != null && !socket.isClosed()) {
+          socket.close();
+        }
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    });
   }
 
   public static String loadCSS() {
@@ -41,21 +54,12 @@ public class Main extends Application {
     return new Image(Objects.requireNonNull(logoURL).toExternalForm());
   }
 
-  private static void testMAC() {
-    String serverAddress = "127.0.0.1"; // adres IP serwera
-    int serverPort = 12345; // port serwera
-
-    String macAddress = MACAddress.getMACAddress(serverAddress, serverPort);
-    System.out.println("Adres MAC: " + macAddress);
-  }
-
   public static void setTableNumber(int number) {
     tableNumber = number;
   }
   public static int getTableNumber() {
     return tableNumber;
   }
-
 
   public static void main(String[] args) {
     launch(args);

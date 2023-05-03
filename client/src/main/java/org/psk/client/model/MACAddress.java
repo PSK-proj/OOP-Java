@@ -5,13 +5,12 @@ import java.net.*;
 import java.util.Enumeration;
 
 public class MACAddress {
-
+  private static Socket socket;
   public static String getMACAddress(String serverAddress, int serverPort) {
     try {
-      Socket socket = new Socket();
-      socket.connect(new InetSocketAddress(serverAddress, serverPort));
+      socket = ConnectionManager.getSocket();
+      //socket.connect(new InetSocketAddress(serverAddress, serverPort));
       InetAddress localAddress = socket.getLocalAddress();
-      socket.close();
 
       Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
 
@@ -31,7 +30,8 @@ public class MACAddress {
           }
         }
       }
-    } catch (SocketException | UnknownHostException e) {
+    } catch (SocketException e) {
+    //} catch (SocketException | UnknownHostException e) {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
