@@ -3,15 +3,17 @@ package org.psk.client.model;
 import org.psk.client.Main;
 
 import java.io.IOException;
+import java.net.Socket;
 import java.sql.SQLException;
 
 public class SearchForTableNumber {
   private static final StolikiDAO stolikiDAO = new StolikiDAO();
+  private static final Socket clientSocket = ConnectionManager.getSocket();
 
   public static void search() {
-    String macAddress = getMacAddress();
-
     try {
+      String macAddress = MacAddressFinder.getMacAddress(clientSocket);
+      System.out.println("Adres MAC karty sieciowej używanej do łączenia się z serwerem: " + macAddress);
       Integer tableNumber = stolikiDAO.getStolikByMac(macAddress);
       if (tableNumber != null) {
         // Znaleziono numer stolika dla danego adresu MAC
@@ -25,10 +27,5 @@ public class SearchForTableNumber {
       // Obsługa wyjątków, np. problemy z połączeniem z bazą danych
       e.printStackTrace();
     }
-  }
-
-  private static String getMacAddress() {
-    // Implementacja funkcji do pobierania adresu MAC komputera
-    return "60-45-CB-9E-FE-FF";
   }
 }

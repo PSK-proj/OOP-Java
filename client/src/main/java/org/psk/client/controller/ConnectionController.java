@@ -2,6 +2,7 @@ package org.psk.client.controller;
 
 import javafx.fxml.Initializable;
 import org.psk.client.model.ConnectionManager;
+import org.psk.client.model.SearchForTableNumber;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -22,6 +23,7 @@ public class ConnectionController implements Initializable {
 
         // Przełącz na kolejny widok (np. menuView) po pomyślnym połączeniu z serwerem
         // ...
+        SearchForTableNumber.search();
 
       } catch (IOException e) {
         e.printStackTrace();

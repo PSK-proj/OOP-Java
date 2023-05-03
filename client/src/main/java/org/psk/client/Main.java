@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.psk.client.model.ConnectionManager;
-import org.psk.client.model.SearchForTableNumber;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -21,9 +20,6 @@ public class Main extends Application {
 
   @Override
     public void start(Stage stage) throws Exception {
-      SearchForTableNumber.search(); // póki co zostawiamy tak na sztywno
-
-
       FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/psk/client/view/connectionView.fxml"));
       Parent root = loader.load();
       Scene scene = new Scene(root);
