@@ -39,9 +39,7 @@ public class ConnectionController implements Initializable {
       } catch (IOException e) {
         e.printStackTrace();
         // Obsłuż sytuację, gdy nie można połączyć się z serwerem
-        Platform.runLater(() -> {
-          info.setText("Server unreachable!");
-        });
+        Platform.runLater(() -> info.setText("Server unreachable!"));
       }
     }).start();
   }
