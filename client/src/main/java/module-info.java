@@ -11,4 +11,6 @@ module client {
   exports org.psk.client;
   opens org.psk.client.controller to javafx.fxml;
   exports org.psk.client.controller;
+  opens org.psk.client.util to javafx.fxml;
+  exports org.psk.client.util;
 }

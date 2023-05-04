@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.psk.client.Main;
+import org.psk.client.util.MenuHelper;
 
 import java.io.IOException;
 
@@ -20,18 +21,7 @@ public class SummaryController {
   }
 
   public void returnToMenu(ActionEvent event) {
-    try {
-      FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/psk/client/view/menuView.fxml"));
-      Parent menuView = loader.load();
-
-      menuView.getStylesheets().add(Main.loadCSS());
-
-      Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-      stage.setTitle("La Dolce Vita - Menu");
-      stage.setScene(new Scene(menuView));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    MenuHelper.showMenu(event);
   }
 
   public void submitOrder(ActionEvent event) {
