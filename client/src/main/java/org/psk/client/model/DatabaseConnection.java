@@ -12,6 +12,9 @@ public class DatabaseConnection {
   public static Connection getConnection() throws SQLException, IOException {
     Properties properties = new Properties();
     try (InputStream inputStream = DatabaseConnection.class.getResourceAsStream("/org/psk/client/config.properties")) {
+      if (inputStream == null) {
+        throw new IOException("Nie można znaleźć pliku config.properties");
+      }
       properties.load(inputStream);
     }
 
