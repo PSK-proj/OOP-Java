@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import org.psk.client.model.ConnectionManager;
 import org.psk.client.model.SearchForTableNumber;
 import org.psk.client.util.MenuHelper;
+import org.psk.shared.util.ConnectionConfigHelper;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -20,8 +21,8 @@ public class ConnectionController implements Initializable {
   public void initialize(URL location, ResourceBundle resources) {
     new Thread(() -> {
       try {
-        String serverAddress = "192.168.0.5"; // Adres IP serwera
-        int port = 12345; // Przykładowy numer portu serwera
+        String serverAddress = ConnectionConfigHelper.GetIP(); // Adres IP serwera
+        int port = ConnectionConfigHelper.GetPort(); // Przykładowy numer portu serwera
 
         Socket socket = new Socket(serverAddress, port);
         ConnectionManager.setSocket(socket);
