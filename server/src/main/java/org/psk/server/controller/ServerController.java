@@ -2,7 +2,7 @@ package org.psk.server.controller;
 
 import javafx.fxml.Initializable;
 import org.psk.server.Main;
-import org.psk.shared.util.ConnectionConfigHelper;
+import org.psk.shared.util.ConfigLoadHelper;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -21,7 +21,7 @@ public class ServerController implements Initializable {
     new Thread(() -> {
       int port = 12345; // Przykładowy numer portu, który będzie nasłuchiwał serwer
       try {
-        port = ConnectionConfigHelper.GetPort();
+        port = ConfigLoadHelper.getPort();
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
