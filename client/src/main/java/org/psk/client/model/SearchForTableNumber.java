@@ -22,6 +22,7 @@ public class SearchForTableNumber {
       } else {
         // Nie znaleziono numeru stolika dla danego adresu MAC, obsłużyć tę sytuację
         System.out.println("Nie znaleziono numeru stolika dla adresu MAC: " + macAddress);
+        ConnectionManager.sendTableAssignmentRequest(macAddress);
       }
     } catch (SQLException | IOException e) {
       // Obsługa wyjątków, np. problemy z połączeniem z bazą danych

@@ -33,10 +33,16 @@ public class ServerSocketHandler implements Runnable {
           break;
         }
 
+        String[] messageParts = message.split(":", 2);
+        String requestType = messageParts[0];
+        String requestData = messageParts.length > 1 ? messageParts[1] : null;
+
         // Obsługa wiadomości od klienta
-        switch (message) {
-          case "REQUEST_TABLE_NUMBER":
+        switch (requestType) {
+          case "REQUEST_TABLE_ASSIGNMENT":
             // Przetwarzanie żądania przypisania numeru stolika
+            String macAddress = requestData;
+            System.out.println("Zażądano nr stolika dla: "+macAddress);
             break;
           case "SEND_ORDER":
             // Przetwarzanie wysyłania zamówienia
