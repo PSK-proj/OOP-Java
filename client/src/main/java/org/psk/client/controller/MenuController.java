@@ -14,10 +14,10 @@ import java.io.IOException;
 
 public class MenuController {
   @FXML
-  private Label tableNumberLabel;
+  Label tableNumberLabel = new Label();
 
   public void initialize() {
-    tableNumberLabel.setText(String.valueOf(Main.getTableNumber()));
+    tableNumberLabel.textProperty().bind(Main.tableNumberProperty().asString());
   }
   public void showSummaryView(ActionEvent event) {
     try {

@@ -15,9 +15,9 @@ import java.io.IOException;
 
 public class SummaryController {
   @FXML
-  private Label tableNumberLabel;
+  Label tableNumberLabel = new Label();
   public void initialize() {
-    tableNumberLabel.setText(String.valueOf(Main.getTableNumber()));
+    tableNumberLabel.textProperty().bind(Main.tableNumberProperty().asString());
   }
 
   public void returnToMenu(ActionEvent event) {

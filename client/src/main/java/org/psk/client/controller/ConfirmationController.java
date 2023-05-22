@@ -8,9 +8,10 @@ import org.psk.client.util.MenuHelper;
 
 public class ConfirmationController {
   @FXML
-  private Label tableNumberLabel;
+  Label tableNumberLabel = new Label();
+
   public void initialize() {
-    tableNumberLabel.setText(String.valueOf(Main.getTableNumber()));
+    tableNumberLabel.textProperty().bind(Main.tableNumberProperty().asString());
   }
   public void returnToMenu(ActionEvent event) {
     MenuHelper.showMenu(event);

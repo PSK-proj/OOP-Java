@@ -1,6 +1,8 @@
 package org.psk.client;
 
 import javafx.application.Application;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,7 +18,7 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-  private static int tableNumber;
+  private static final IntegerProperty tableNumber = new SimpleIntegerProperty(0);
   private Socket socket;
 
   @Override
@@ -53,11 +55,16 @@ public class Main extends Application {
     return new Image(Objects.requireNonNull(logoURL).toExternalForm());
   }
 
-  public static void setTableNumber(int number) {
-    tableNumber = number;
-  }
   public static int getTableNumber() {
+    return tableNumber.get();
+  }
+
+  public static IntegerProperty tableNumberProperty() {
     return tableNumber;
+  }
+
+  public static void setTableNumber(int tableNumber) {
+    Main.tableNumber.set(tableNumber);
   }
 
   public static void main(String[] args) {

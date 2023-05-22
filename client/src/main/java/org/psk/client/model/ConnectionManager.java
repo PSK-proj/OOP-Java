@@ -1,5 +1,6 @@
 package org.psk.client.model;
 
+import javafx.application.Platform;
 import org.psk.client.Main;
 
 import java.io.BufferedReader;
@@ -91,7 +92,9 @@ public class ConnectionManager {
               int assignedTableNumber = Integer.parseInt(responseData);
               // aktualizuj numer stolika w aplikacji klienckiej
               System.out.println("Przypisano klientowi nr: "+assignedTableNumber);
-              Main.setTableNumber(assignedTableNumber);
+              Platform.runLater(() -> {
+                Main.setTableNumber(assignedTableNumber);
+              });
               break;
             // obsługa innych typów odpowiedzi
             // ...
