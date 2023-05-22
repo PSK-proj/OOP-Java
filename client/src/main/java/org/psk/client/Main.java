@@ -7,9 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.psk.client.model.ConnectionManager;
+import org.psk.client.model.database.DatabaseConnection;
 
 import java.net.Socket;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class Main extends Application {
@@ -31,6 +33,11 @@ public class Main extends Application {
       socket = ConnectionManager.getSocket();
       if (socket != null && !socket.isClosed()) {
         ConnectionManager.closeResources();
+        try {
+          DatabaseConnection.closeConnection();
+        } catch (SQLException e) {
+          throw new RuntimeException(e);
+        }
       }
     });
 

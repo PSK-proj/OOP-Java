@@ -1,4 +1,4 @@
-package org.psk.client.model;
+package org.psk.client.model.database;
 
 import java.io.IOException;
 import java.sql.Connection;

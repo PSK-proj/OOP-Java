@@ -1,6 +1,7 @@
 package org.psk.client.model;
 
 import org.psk.client.Main;
+import org.psk.client.model.database.StolikiDAO;
 
 import java.io.IOException;
 import java.net.Socket;

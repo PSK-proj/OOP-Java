@@ -62,4 +62,28 @@ public class ConfigLoadHelper {
 
     return properties.getProperty("dbc.password");
   }
+
+  public static String getServerDbUser() throws IOException {
+    Properties properties = new Properties();
+    try (InputStream inputStream = ConfigLoadHelper.class.getResourceAsStream(configPath)) {
+      if (inputStream == null) {
+        throw new IOException("Nie można znaleźć pliku config.properties");
+      }
+      properties.load(inputStream);
+    }
+
+    return properties.getProperty("dbs.user");
+  }
+
+  public static String getServerDbPass() throws IOException {
+    Properties properties = new Properties();
+    try (InputStream inputStream = ConfigLoadHelper.class.getResourceAsStream(configPath)) {
+      if (inputStream == null) {
+        throw new IOException("Nie można znaleźć pliku config.properties");
+      }
+      properties.load(inputStream);
+    }
+
+    return properties.getProperty("dbs.password");
+  }
 }

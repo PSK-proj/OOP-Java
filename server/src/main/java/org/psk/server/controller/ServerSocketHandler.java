@@ -1,15 +1,28 @@
 package org.psk.server.controller;
 
+import org.psk.server.model.database.StolikiDAO;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.sql.SQLException;
 
 public class ServerSocketHandler implements Runnable {
   private Socket socket;
   private BufferedReader in;
   private PrintWriter out;
+
+  private static final StolikiDAO stolikiDAO;
+
+  static {
+    try {
+      stolikiDAO = new StolikiDAO();
+    } catch (SQLException | IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
 
   public ServerSocketHandler(Socket socket) {
     this.socket = socket;
@@ -44,10 +57,12 @@ public class ServerSocketHandler implements Runnable {
             String macAddress = requestData;
             System.out.println("Zażądano nr stolika dla: "+macAddress);
             // TU WSTAWIĆ FUNKCJONALNOŚĆ PRZYPISYWANIA STOLIKA W BAZIE DANYCH
+            Integer lastNumber = stolikiDAO.getLastTableNumber();
+            int assignedTableNumber = lastNumber + 1;
+            stolikiDAO.assignTable(macAddress, assignedTableNumber);
 
             // Wysłanie odpowiedzi do klienta
-            out.println("TABLE_ASSIGNED:" + 99);
-            //out.println("TABLE_ASSIGNED:" + assignedTableNumber);
+            out.println("TABLE_ASSIGNED:" + assignedTableNumber);
             break;
           case "SEND_ORDER":
             // Przetwarzanie wysyłania zamówienia
@@ -57,6 +72,8 @@ public class ServerSocketHandler implements Runnable {
       }
     } catch (IOException e) {
       e.printStackTrace();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
     } finally {
       closeConnection();
     }

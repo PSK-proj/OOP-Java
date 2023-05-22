@@ -90,6 +90,7 @@ public class ConnectionManager {
               assert responseData != null;
               int assignedTableNumber = Integer.parseInt(responseData);
               // aktualizuj numer stolika w aplikacji klienckiej
+              System.out.println("Przypisano klientowi nr: "+assignedTableNumber);
               Main.setTableNumber(assignedTableNumber);
               break;
             // obsługa innych typów odpowiedzi
