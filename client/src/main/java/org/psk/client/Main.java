@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.psk.client.model.ConnectionManager;
 
-import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
 import java.util.Objects;
@@ -29,15 +28,12 @@ public class Main extends Application {
       stage.getIcons().add(loadLogo());
       stage.show();
       stage.setOnCloseRequest(event -> {
-      try {
-        socket = ConnectionManager.getSocket();
-        if (socket != null && !socket.isClosed()) {
-          socket.close();
-        }
-      } catch (IOException e) {
-        e.printStackTrace();
+      socket = ConnectionManager.getSocket();
+      if (socket != null && !socket.isClosed()) {
+        ConnectionManager.closeResources();
       }
     });
+
   }
 
   public static String loadCSS() {

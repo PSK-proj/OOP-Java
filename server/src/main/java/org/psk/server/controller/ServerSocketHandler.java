@@ -43,6 +43,11 @@ public class ServerSocketHandler implements Runnable {
             // Przetwarzanie żądania przypisania numeru stolika
             String macAddress = requestData;
             System.out.println("Zażądano nr stolika dla: "+macAddress);
+            // TU WSTAWIĆ FUNKCJONALNOŚĆ PRZYPISYWANIA STOLIKA W BAZIE DANYCH
+
+            // Wysłanie odpowiedzi do klienta
+            out.println("TABLE_ASSIGNED:" + 99);
+            //out.println("TABLE_ASSIGNED:" + assignedTableNumber);
             break;
           case "SEND_ORDER":
             // Przetwarzanie wysyłania zamówienia
