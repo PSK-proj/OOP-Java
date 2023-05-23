@@ -1,7 +1,10 @@
 package org.psk.server.controller;
 
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 import org.psk.server.Main;
+import org.psk.server.util.LogManager;
 import org.psk.shared.util.ConfigLoadHelper;
 
 import java.io.IOException;
@@ -16,8 +19,15 @@ public class ServerController implements Initializable {
   public ServerSocketHandler handler;
   private Main mainApp;
 
+  @FXML
+  private ListView<String> historyList;
+
+  private LogManager logManager;
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    logManager = LogManager.getInstance(historyList);
+    logManager.addLog("Server został uruchomiony");
     new Thread(() -> {
       int port = 12345; // Przykładowy numer portu, który będzie nasłuchiwał serwer
       try {
@@ -29,11 +39,13 @@ public class ServerController implements Initializable {
       try (ServerSocket serverSocket = new ServerSocket(port)) {
         this.serverSocket = serverSocket;
         System.out.println("Serwer nasłuchuje na porcie: " + port);
+        logManager.addLog("Serwer nasłuchuje na porcie: " + port);
 
         while (!serverSocket.isClosed()) {
           try {
             Socket clientSocket = serverSocket.accept(); // Akceptuj połączenie od klienta
             System.out.println("Połączenie zaakceptowane od: " + clientSocket.getRemoteSocketAddress());
+            logManager.addLog("Połączenie zaakceptowane od: " + clientSocket.getRemoteSocketAddress());
             ServerSocketHandler handler = new ServerSocketHandler(clientSocket);
             new Thread(handler).start(); // Uruchom wątek obsługujący połączenie
           } catch (SocketException e) {
