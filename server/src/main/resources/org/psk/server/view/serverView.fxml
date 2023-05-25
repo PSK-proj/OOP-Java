@@ -16,7 +16,7 @@
    <children>
       <TabPane fx:id="mainBox" layoutX="-1.0" layoutY="-2.0" prefHeight="487.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Kelner 1">
+          <Tab fx:id="kelnerTab1" text="Kelner 1">
                <content>
                   <HBox maxHeight="1.7976931348623157E308">
                      <children>
@@ -31,13 +31,13 @@
                               <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label fx:id="mainBoxK1S1Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: 1" />
+                              <Label fx:id="mainBoxK1S1Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
                               <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
                               <ListView fx:id="mainBoxK1S1Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
                               <Label fx:id="mainBoxK1S1O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
                            </children>
                            <HBox.margin>
-                              <Insets />
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
                            </HBox.margin>
                         </GridPane>
                         <GridPane layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
@@ -56,12 +56,75 @@
                               <ListView fx:id="mainBoxK1S2Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
                               <Label fx:id="mainBoxK1S2O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
                            </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="238.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK1S3Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK1S3Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK1S3O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="466.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK1S4Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK1S4Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK1S4O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="694.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK1S5Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK1S5Z111" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK1S5O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
                         </GridPane>
                      </children>
                   </HBox>
                </content>
           </Tab>
-          <Tab text="Kelner 2">
+          <Tab fx:id="kelnerTab2" text="Kelner 2">
                <content>
                   <HBox maxHeight="1.7976931348623157E308">
                      <children>
@@ -82,7 +145,7 @@
                               <Label fx:id="mainBoxK2S1O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
                            </children>
                            <HBox.margin>
-                              <Insets />
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
                            </HBox.margin>
                         </GridPane>
                         <GridPane layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
@@ -101,11 +164,182 @@
                               <ListView fx:id="mainBoxK2S2Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
                               <Label fx:id="mainBoxK2S2O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
                            </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="283.0" layoutY="12.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK2S3Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK2S3Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK2S3O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="526.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK2S4Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK2S4Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK2S4O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="754.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK2S5Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK2S5Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK2S5O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
                         </GridPane>
                      </children>
                   </HBox>
                </content>
           </Tab>
+            <Tab fx:id="kelnerTab3" text="Kelner 3">
+               <content>
+                  <HBox maxHeight="1.7976931348623157E308">
+                     <children>
+                        <GridPane maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK3S1Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK3S1Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK3S1O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK3S2Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK3S2Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK3S2O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="283.0" layoutY="12.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK3S3Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK3S3Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK3S3O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="526.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK3S4Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK3S4Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK3S4O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                        <GridPane layoutX="754.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="228.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="mainBoxK3S5Label" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Stolik: " />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Zamówiono: " GridPane.rowIndex="1" />
+                              <ListView fx:id="mainBoxK3S5Z" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+                              <Label fx:id="mainBoxK3S5O" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nie zapłacono" GridPane.rowIndex="3" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="15.0" right="15.0" top="2.0" />
+                           </HBox.margin>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
       <GridPane fx:id="history" alignment="BOTTOM_CENTER" layoutX="6.0" layoutY="490.0" prefHeight="221.0" prefWidth="1267.0">

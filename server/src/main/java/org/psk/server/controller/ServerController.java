@@ -3,7 +3,10 @@ package org.psk.server.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Tab;
 import org.psk.server.Main;
+import org.psk.server.model.database.Kelner;
+import org.psk.server.model.database.KelnerzyDAO;
 import org.psk.server.util.LogManager;
 import org.psk.shared.util.ConfigLoadHelper;
 
@@ -12,12 +15,21 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ServerController implements Initializable {
   public ServerSocket serverSocket;
   public ServerSocketHandler handler;
   private Main mainApp;
+
+  @FXML
+  private Tab kelnerTab1;
+  @FXML
+  private Tab kelnerTab2;
+  @FXML
+  private Tab kelnerTab3;
 
   @FXML
   private ListView<String> historyList;
@@ -28,6 +40,9 @@ public class ServerController implements Initializable {
   public void initialize(URL location, ResourceBundle resources) {
     logManager = LogManager.getInstance(historyList);
     logManager.addLog("Server został uruchomiony");
+
+    setTabNames();
+
     new Thread(() -> {
       int port = 12345; // Przykładowy numer portu, który będzie nasłuchiwał serwer
       try {
@@ -79,6 +94,27 @@ public class ServerController implements Initializable {
       } catch (IOException e) {
         e.printStackTrace();
       }
+    }
+  }
+
+  private void setTabNames() {
+    try {
+      KelnerzyDAO kelnerzyDAO = new KelnerzyDAO();
+      List<Kelner> kelnerzy = kelnerzyDAO.getAllKelnerzy();
+
+      // Ustalamy tytuły dla zakładek
+      if(kelnerzy.size() > 0) {
+        kelnerTab1.setText("Kelner " + kelnerzy.get(0).getId() + ": " + kelnerzy.get(0).getImie() + " " + kelnerzy.get(0).getNazwisko());
+      }
+      if(kelnerzy.size() > 1) {
+        kelnerTab2.setText("Kelner " + kelnerzy.get(1).getId() + ": " + kelnerzy.get(1).getImie() + " " + kelnerzy.get(1).getNazwisko());
+      }
+      if(kelnerzy.size() > 2) {
+        kelnerTab3.setText("Kelner " + kelnerzy.get(2).getId() + ": " + kelnerzy.get(2).getImie() + " " + kelnerzy.get(2).getNazwisko());
+      }
+      logManager.addLog("Odczytano kelnerów z bazy");
+    } catch (SQLException | IOException e) {
+      e.printStackTrace();
     }
   }
 }
