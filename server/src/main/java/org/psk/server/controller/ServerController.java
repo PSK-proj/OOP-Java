@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import org.psk.server.Main;
+import org.psk.server.model.database.DatabaseConnection;
 import org.psk.server.model.database.Kelner;
 import org.psk.server.model.database.KelnerzyDAO;
 import org.psk.server.util.LogManager;
@@ -100,6 +101,7 @@ public class ServerController implements Initializable {
   private void setTabNames() {
     try {
       KelnerzyDAO kelnerzyDAO = new KelnerzyDAO();
+      kelnerzyDAO.setConnection(DatabaseConnection.getConnection());
       List<Kelner> kelnerzy = kelnerzyDAO.getAllKelnerzy();
 
       // Ustalamy tytuły dla zakładek

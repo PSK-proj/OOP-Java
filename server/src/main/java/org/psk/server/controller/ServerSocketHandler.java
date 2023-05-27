@@ -1,5 +1,6 @@
 package org.psk.server.controller;
 
+import org.psk.server.model.database.DatabaseConnection;
 import org.psk.server.model.database.StolikiDAO;
 import org.psk.server.util.LogManager;
 
@@ -20,6 +21,7 @@ public class ServerSocketHandler implements Runnable {
   static {
     try {
       stolikiDAO = new StolikiDAO();
+      stolikiDAO.setConnection(DatabaseConnection.getConnection());
     } catch (SQLException | IOException e) {
       throw new RuntimeException(e);
     }

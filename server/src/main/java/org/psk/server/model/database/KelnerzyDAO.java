@@ -1,6 +1,7 @@
 package org.psk.server.model.database;
 
-import java.io.IOException;
+import org.psk.shared.database.DAO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,11 +9,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KelnerzyDAO {
-  private final Connection connection;
+public class KelnerzyDAO implements DAO {
+  private Connection connection;
 
-  public KelnerzyDAO() throws SQLException, IOException {
-    connection = DatabaseConnection.getConnection();
+  @Override
+  public void setConnection(Connection connection) {
+    this.connection = connection;
   }
 
   public List<Kelner> getAllKelnerzy() throws SQLException {

@@ -1,16 +1,18 @@
 package org.psk.server.model.database;
 
-import java.io.IOException;
+import org.psk.shared.database.DAO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class StolikiDAO {
-  private final Connection connection;
+public class StolikiDAO implements DAO {
+  private Connection connection;
 
-  public StolikiDAO() throws SQLException, IOException {
-    connection = DatabaseConnection.getConnection();
+  @Override
+  public void setConnection(Connection connection) {
+    this.connection = connection;
   }
 
   public void assignTable(String macAddress, int tableNumber) throws SQLException {
