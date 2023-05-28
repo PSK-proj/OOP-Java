@@ -1,3 +1,7 @@
 .root {
    -fx-background-image: url('images/background.png');
 }
+
+.label {
+    -fx-effect: dropshadow(gaussian, rgba(255, 180, 1, 0.5), 50, 0.6, 1, 1);
+}

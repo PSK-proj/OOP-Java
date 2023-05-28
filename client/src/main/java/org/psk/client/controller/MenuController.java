@@ -7,19 +7,46 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import org.psk.client.Main;
+import org.psk.client.model.database.DatabaseConnection;
+import org.psk.client.util.MenuManager;
+import org.psk.shared.database.MenuDAO;
+import org.psk.shared.model.PotrawaWrapper;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.LinkedHashSet;
 
 public class MenuController {
   @FXML
   Label tableNumberLabel = new Label();
+  @FXML
+  private ListView<PotrawaWrapper> listViewNapoje;
+  @FXML
+  private ListView<PotrawaWrapper> listViewDaniaGlowne;
+  @FXML
+  private ListView<PotrawaWrapper> listViewDesery;
 
-  public void initialize() {
+
+  private MenuManager menuManager = new MenuManager();
+
+  public void initialize() throws SQLException, IOException {
     tableNumberLabel.textProperty().bind(Main.tableNumberProperty().asString());
+
+    MenuDAO menuDAO = new MenuDAO();
+    menuDAO.setConnection(DatabaseConnection.getConnection());
+
+    menuManager.loadMenuData(menuDAO, listViewNapoje, listViewDaniaGlowne, listViewDesery);
+    menuManager.bindSelection(listViewNapoje, listViewDaniaGlowne, listViewDesery);
+  }
+
+  public LinkedHashSet<PotrawaWrapper> getSelectedPotrawy() {
+    return menuManager.getSelectedPotrawy();
   }
   public void showSummaryView(ActionEvent event) {
+    System.out.println("DEB: " + menuManager.getSelectedPotrawy());
     try {
       FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/psk/client/view/summaryView.fxml"));
       Parent summaryView = loader.load();

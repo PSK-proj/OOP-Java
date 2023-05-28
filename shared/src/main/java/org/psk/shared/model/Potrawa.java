@@ -13,6 +13,10 @@ public class Potrawa {
     this.cena = cena;
   }
 
+  public String toString(int numerPorzadkowy) {
+    return numerPorzadkowy + ". " + nazwa + " - " + cena + "zł";
+  }
+
   public int getId() {
     return id;
   }
