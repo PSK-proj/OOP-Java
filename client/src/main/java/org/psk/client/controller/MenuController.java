@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.psk.client.Main;
 import org.psk.client.model.database.DatabaseConnection;
 import org.psk.client.util.MenuManager;
@@ -20,6 +22,9 @@ import java.sql.SQLException;
 import java.util.LinkedHashSet;
 
 public class MenuController {
+
+  private static final Logger logger = LogManager.getLogger(MenuController.class);
+
   @FXML
   Label tableNumberLabel = new Label();
   @FXML
@@ -46,7 +51,7 @@ public class MenuController {
     return menuManager.getSelectedPotrawy();
   }
   public void showSummaryView(ActionEvent event) {
-    System.out.println("DEB: " + menuManager.getSelectedPotrawy());
+    logger.debug("Zamówienie: " + menuManager.getSelectedPotrawy());
     try {
       FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/psk/client/view/summaryView.fxml"));
       Parent summaryView = loader.load();

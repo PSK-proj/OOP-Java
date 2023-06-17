@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
+import org.apache.logging.log4j.Logger;
 import org.psk.server.Main;
 import org.psk.server.model.database.DatabaseConnection;
 import org.psk.server.model.database.Kelner;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ServerController implements Initializable {
+  private static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(ServerController.class);
   public ServerSocket serverSocket;
   public ServerSocketHandler handler;
   private Main mainApp;
@@ -40,6 +42,7 @@ public class ServerController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     logManager = LogManager.getInstance(historyList);
+    logger.info("Server został uruchomiony");
     logManager.addLog("Server został uruchomiony");
 
     setTabNames();
@@ -54,20 +57,20 @@ public class ServerController implements Initializable {
 
       try (ServerSocket serverSocket = new ServerSocket(port)) {
         this.serverSocket = serverSocket;
-        System.out.println("Serwer nasłuchuje na porcie: " + port);
+        logger.debug("Serwer nasłuchuje na porcie: " + port);
         logManager.addLog("Serwer nasłuchuje na porcie: " + port);
 
         while (!serverSocket.isClosed()) {
           try {
             Socket clientSocket = serverSocket.accept(); // Akceptuj połączenie od klienta
-            System.out.println("Połączenie zaakceptowane od: " + clientSocket.getRemoteSocketAddress());
+            logger.debug("Połączenie zaakceptowane od: " + clientSocket.getRemoteSocketAddress());
             logManager.addLog("Połączenie zaakceptowane od: " + clientSocket.getRemoteSocketAddress());
             ServerSocketHandler handler = new ServerSocketHandler(clientSocket);
             new Thread(handler).start(); // Uruchom wątek obsługujący połączenie
           } catch (SocketException e) {
             // Obsługa przypadku, gdy serverSocket został zamknięty
             if (serverSocket.isClosed()) {
-              System.out.println("Serwer został zamknięty");
+              logger.info("Serwer został zamknięty");
             } else {
               e.printStackTrace();
             }
@@ -114,6 +117,7 @@ public class ServerController implements Initializable {
       if(kelnerzy.size() > 2) {
         kelnerTab3.setText("Kelner " + kelnerzy.get(2).getId() + ": " + kelnerzy.get(2).getImie() + " " + kelnerzy.get(2).getNazwisko());
       }
+      logger.info("Odczytano kelnerów z bazy");
       logManager.addLog("Odczytano kelnerów z bazy");
     } catch (SQLException | IOException e) {
       e.printStackTrace();

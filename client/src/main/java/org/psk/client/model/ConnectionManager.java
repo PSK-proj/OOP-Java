@@ -1,6 +1,8 @@
 package org.psk.client.model;
 
 import javafx.application.Platform;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.psk.client.Main;
 
 import java.io.BufferedReader;
@@ -10,6 +12,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ConnectionManager {
+  private static final Logger logger = LogManager.getLogger(ConnectionManager.class);
   private static Socket socket;
   private static PrintWriter out;
   private static ResponseListener responseListener;
@@ -34,7 +37,7 @@ public class ConnectionManager {
     if (out == null) {
       throw new IllegalStateException("PrintWriter is null. Please make sure to connect first.");
     }
-    System.out.println("Wysyłanie żądania...");
+    logger.info("Wysyłanie żądania...");
     String request = "REQUEST_TABLE_ASSIGNMENT:" + macAddress;
     out.println(request);
     out.flush();
@@ -91,7 +94,7 @@ public class ConnectionManager {
               assert responseData != null;
               int assignedTableNumber = Integer.parseInt(responseData);
               // aktualizuj numer stolika w aplikacji klienckiej
-              System.out.println("Przypisano klientowi nr: "+assignedTableNumber);
+              logger.debug("Przypisano klientowi nr: " + assignedTableNumber);
               Platform.runLater(() -> {
                 Main.setTableNumber(assignedTableNumber);
               });

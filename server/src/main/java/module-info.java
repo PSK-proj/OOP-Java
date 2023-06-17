@@ -6,6 +6,7 @@ module server {
   requires shared;
 
   requires java.sql;
+  requires org.apache.logging.log4j;
 
   opens org.psk.server to javafx.fxml;
   exports org.psk.server;

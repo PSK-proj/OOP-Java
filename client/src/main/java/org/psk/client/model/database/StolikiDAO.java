@@ -17,7 +17,6 @@ public class StolikiDAO implements DAO {
 
   public Integer getStolikByMac(String macAddress) throws SQLException, IOException {
     String query = "SELECT numer FROM stoliki WHERE mac = ?";
-    //try (Connection connection = DatabaseConnection.getConnection();
     try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
       preparedStatement.setString(1, macAddress);

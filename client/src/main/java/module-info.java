@@ -6,6 +6,7 @@ module client {
   requires shared;
 
   requires java.sql;
+  requires org.apache.logging.log4j;
 
   opens org.psk.client to javafx.fxml;
   exports org.psk.client;

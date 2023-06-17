@@ -1,5 +1,6 @@
 package org.psk.server.controller;
 
+import org.apache.logging.log4j.Logger;
 import org.psk.server.model.database.DatabaseConnection;
 import org.psk.server.model.database.StolikiDAO;
 import org.psk.server.util.LogManager;
@@ -12,6 +13,7 @@ import java.net.Socket;
 import java.sql.SQLException;
 
 public class ServerSocketHandler implements Runnable {
+  private static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(ServerSocketHandler.class);
   private Socket socket;
   private BufferedReader in;
   private PrintWriter out;
@@ -58,8 +60,8 @@ public class ServerSocketHandler implements Runnable {
           case "REQUEST_TABLE_ASSIGNMENT":
             // Przetwarzanie żądania przypisania numeru stolika
             String macAddress = requestData;
-            System.out.println("Zażądano nr stolika dla: "+macAddress);
-            LogManager.getInstance().addLog("Zażądano nr stolika dla: "+macAddress);
+            logger.debug("Zażądano nr stolika dla: " + macAddress);
+            LogManager.getInstance().addLog("Zażądano nr stolika dla: " + macAddress);
             // TU WSTAWIĆ FUNKCJONALNOŚĆ PRZYPISYWANIA STOLIKA W BAZIE DANYCH
             Integer lastNumber = stolikiDAO.getLastTableNumber();
             int assignedTableNumber = lastNumber + 1;
@@ -67,7 +69,7 @@ public class ServerSocketHandler implements Runnable {
 
             // Wysłanie odpowiedzi do klienta
             out.println("TABLE_ASSIGNED:" + assignedTableNumber);
-            System.out.println("Przypisano klientowi: " + macAddress + " numer: " + assignedTableNumber);
+            logger.debug("Przypisano klientowi: " + macAddress + " numer: " + assignedTableNumber);
             LogManager.getInstance().addLog("Przypisano klientowi: " + macAddress + " numer: " + assignedTableNumber);
             break;
           case "SEND_ORDER":
