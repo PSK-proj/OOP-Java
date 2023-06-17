@@ -14,9 +14,9 @@ import java.util.List;
 
 public class MenuManager {
 
-  private final LinkedHashSet<PotrawaWrapper> selectedNapoje = new LinkedHashSet<>();
-  private final LinkedHashSet<PotrawaWrapper> selectedDaniaGlowne = new LinkedHashSet<>();
-  private final LinkedHashSet<PotrawaWrapper> selectedDesery = new LinkedHashSet<>();
+  final LinkedHashSet<PotrawaWrapper> selectedNapoje = new LinkedHashSet<>();
+  final LinkedHashSet<PotrawaWrapper> selectedDaniaGlowne = new LinkedHashSet<>();
+  final LinkedHashSet<PotrawaWrapper> selectedDesery = new LinkedHashSet<>();
 
 
   public void loadMenuData(MenuDAO menuDAO, ListView<PotrawaWrapper> listViewNapoje, ListView<PotrawaWrapper> listViewDaniaGlowne, ListView<PotrawaWrapper> listViewDesery) {
