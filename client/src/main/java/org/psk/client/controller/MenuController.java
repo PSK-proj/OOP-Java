@@ -35,7 +35,7 @@ public class MenuController {
   private ListView<PotrawaWrapper> listViewDesery;
 
 
-  private MenuManager menuManager = new MenuManager();
+  private final MenuManager menuManager = new MenuManager();
 
   public void initialize() throws SQLException, IOException {
     tableNumberLabel.textProperty().bind(Main.tableNumberProperty().asString());

@@ -3,8 +3,8 @@ package org.psk.shared.model;
 import java.util.Objects;
 
 public class PotrawaWrapper {
-  private Potrawa potrawa;
-  private String displayString;
+  private final Potrawa potrawa;
+  private final String displayString;
 
   public PotrawaWrapper(Potrawa potrawa, int numerPorzadkowy) {
     this.potrawa = potrawa;

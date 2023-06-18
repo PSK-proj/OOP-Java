@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class ServerSocketHandler implements Runnable {
   private static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(ServerSocketHandler.class);
-  private Socket socket;
+  private final Socket socket;
   private BufferedReader in;
   private PrintWriter out;
 

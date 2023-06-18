@@ -61,7 +61,7 @@ public class ConnectionManager {
 
   private static class ResponseListener implements Runnable {
     private volatile boolean running = true;
-    private Socket socket;
+    private final Socket socket;
     private BufferedReader in;
 
     public ResponseListener(Socket socket) {
