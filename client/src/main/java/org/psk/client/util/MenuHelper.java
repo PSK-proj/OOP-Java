@@ -11,6 +11,9 @@ import org.psk.client.Main;
 
 import java.io.IOException;
 
+/**
+ * Klasa pomocnicza wyświetlająca widok menu.
+ */
 public class MenuHelper {
   public static void showMenu(ActionEvent event) {
     Platform.runLater(() -> {

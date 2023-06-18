@@ -11,6 +11,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+/**
+ * Klasa odpowiedzialna za połączenie klienta z serwerem.
+ */
 public class ConnectionManager {
   private static final Logger logger = LogManager.getLogger(ConnectionManager.class);
   private static Socket socket;
@@ -18,10 +21,19 @@ public class ConnectionManager {
   private static ResponseListener responseListener;
   private static Thread listenerThread;
 
+  /**
+   * Getter na socket
+   * @return socket
+   */
   public static Socket getSocket() {
     return socket;
   }
 
+  /**
+   * Setter na socket
+   * @param socket
+   * @throws IOException
+   */
   public static void setSocket(Socket socket) throws IOException {
     closeResources();
     ConnectionManager.socket = socket;
@@ -33,6 +45,11 @@ public class ConnectionManager {
     }
   }
 
+  /**
+   * Metoda wysyłające request o przypisanie numeru stolika.
+   * @param macAddress Adres MAC maszyny.
+   * @throws IOException
+   */
   public static void sendTableAssignmentRequest(String macAddress) throws IOException {
     if (out == null) {
       throw new IllegalStateException("PrintWriter is null. Please make sure to connect first.");
@@ -43,6 +60,9 @@ public class ConnectionManager {
     out.flush();
   }
 
+  /**
+   * Metoda zamykająca połączenie z serwerem.
+   */
   public static void closeResources() {
     if (responseListener != null) {
       responseListener.stop();
@@ -59,6 +79,9 @@ public class ConnectionManager {
     }
   }
 
+  /**
+   * Klasa obsługująca odpowiedzi od serwera.
+   */
   private static class ResponseListener implements Runnable {
     private volatile boolean running = true;
     private final Socket socket;
@@ -116,6 +139,9 @@ public class ConnectionManager {
       this.running = false;
     }
 
+    /**
+     * Metoda zamykająca połączenie.
+     */
     private void closeResources() {
       try {
         if (in != null) {

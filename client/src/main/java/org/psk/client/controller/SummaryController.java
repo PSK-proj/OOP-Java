@@ -13,6 +13,9 @@ import org.psk.client.util.MenuHelper;
 
 import java.io.IOException;
 
+/**
+ * Kontroler widoku podsumowania.
+ */
 public class SummaryController {
   @FXML
   Label tableNumberLabel = new Label();
@@ -20,10 +23,18 @@ public class SummaryController {
     tableNumberLabel.textProperty().bind(Main.tableNumberProperty().asString());
   }
 
+  /**
+   * Metoda powrotu do menu.
+   * @param event
+   */
   public void returnToMenu(ActionEvent event) {
     MenuHelper.showMenu(event);
   }
 
+  /**
+   * Metoda obsługująca wysłanie zamówienia i wyświetlenie potwierdzenia.
+   * @param event
+   */
   public void submitOrder(ActionEvent event) {
     // Logika wysyłania zamówienia do serwera
     // ...

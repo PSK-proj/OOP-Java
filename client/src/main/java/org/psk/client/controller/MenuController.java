@@ -21,6 +21,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.LinkedHashSet;
 
+/**
+ * Kontroler widoku menu.
+ */
 public class MenuController {
 
   private static final Logger logger = LogManager.getLogger(MenuController.class);
@@ -37,6 +40,11 @@ public class MenuController {
 
   private final MenuManager menuManager = new MenuManager();
 
+  /**
+   * Metoda inicjalizacji.
+   * @throws SQLException
+   * @throws IOException
+   */
   public void initialize() throws SQLException, IOException {
     tableNumberLabel.textProperty().bind(Main.tableNumberProperty().asString());
 
@@ -50,6 +58,11 @@ public class MenuController {
   public LinkedHashSet<PotrawaWrapper> getSelectedPotrawy() {
     return menuManager.getSelectedPotrawy();
   }
+
+  /**
+   * Metoda wyświetlająca widok podsumowania.
+   * @param event
+   */
   public void showSummaryView(ActionEvent event) {
     logger.debug("Zamówienie: " + menuManager.getSelectedPotrawy());
     try {

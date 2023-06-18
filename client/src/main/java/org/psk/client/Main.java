@@ -45,24 +45,44 @@ public class Main extends Application {
 
   }
 
+  /**
+   * Metoda ładująca plik CSS.
+   * @return CSS przygotowany do użycia w widoku.
+   */
   public static String loadCSS() {
     URL cssURL = Main.class.getResource("/org/psk/client/main.css");
     return Objects.requireNonNull(cssURL).toExternalForm();
   }
 
+  /**
+   * Metoda ładująca logo programu.
+   * @return logo przygotowane do użycia.
+   */
   public static Image loadLogo() {
     URL logoURL = Main.class.getResource("/org/psk/client/images/logo.png");
     return new Image(Objects.requireNonNull(logoURL).toExternalForm());
   }
 
+  /**
+   * Getter numeru stolika.
+   * @return numer stolika.
+   */
   public static int getTableNumber() {
     return tableNumber.get();
   }
 
+  /**
+   * Metoda potrzebna do prawidłowego wyświetlania numeru stolika.
+   * @return tableNumber.
+   */
   public static IntegerProperty tableNumberProperty() {
     return tableNumber;
   }
 
+  /**
+   * Setter numeru stolika.
+   * @param tableNumber Numer stolika.
+   */
   public static void setTableNumber(int tableNumber) {
     Main.tableNumber.set(tableNumber);
   }

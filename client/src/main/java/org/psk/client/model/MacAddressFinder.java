@@ -6,7 +6,15 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.Enumeration;
 
+/**
+ * Klasa odpowiedzialna za odczytywanie adresu MAC urządzenia.
+ */
 public class MacAddressFinder {
+  /**
+   * Metoda odczytująca MAC interfejsu, którym urządzenie łączy się z serwerem.
+   * @param clientSocket Socket którym urządzenie łączy się z serwerem.
+   * @return Adres MAC.
+   */
   public static String getMacAddress(Socket clientSocket) {
     try {
       InetAddress localAddress = clientSocket.getLocalAddress();

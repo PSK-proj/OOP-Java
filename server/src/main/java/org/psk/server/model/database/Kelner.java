@@ -1,5 +1,8 @@
 package org.psk.server.model.database;
 
+/**
+ * Klasa kelnera.
+ */
 public class Kelner {
   private final int id;
   private final String imie;

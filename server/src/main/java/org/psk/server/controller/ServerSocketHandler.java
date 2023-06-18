@@ -12,6 +12,9 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.sql.SQLException;
 
+/**
+ * Klasa odpowiedzialna za obsługę połączenia z klientem.
+ */
 public class ServerSocketHandler implements Runnable {
   private static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(ServerSocketHandler.class);
   private final Socket socket;
@@ -29,6 +32,10 @@ public class ServerSocketHandler implements Runnable {
     }
   }
 
+  /**
+   * Konstruktor klasy ustawiający Socket.
+   * @param socket
+   */
   public ServerSocketHandler(Socket socket) {
     this.socket = socket;
   }
@@ -86,6 +93,10 @@ public class ServerSocketHandler implements Runnable {
       closeConnection();
     }
   }
+
+  /**
+   * Metoda zamykająca połączenie.
+   */
   public void closeConnection() {
     try {
       // Zamknięcie strumieni wejścia i wyjścia oraz gniazda

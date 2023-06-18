@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a63cdcf-de77-46b3-8762-7f7ed9ea3d52" name="Changes" comment="Reading table number from database on localhost via fixed MAC address and displaying on all customer views.">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/org/psk/client/model/MacAddressFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/org/psk/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/org/psk/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/org/psk/client/model/MACAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/org/psk/client/model/SearchForTableNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/org/psk/client/model/SearchForTableNumber.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OhJOCWJ75iZK6tHgkt3uKr4bAj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "D:/Studia/Semestr 4/Java (P)/SOR",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\[INNE]\Dokumenty\Rodzina\Piotr\Szkoła\Studia\Semestr 4\Java (P)\SOR\shared\src\main\java" />
+      <recent name="D:\[INNE]\Dokumenty\Rodzina\Piotr\Szkoła\Studia\Semestr 4\Java (P)\SOR\shared\src\main\java\org\psk\shared" />
+      <recent name="D:\[INNE]\Dokumenty\Rodzina\Piotr\Szkoła\Studia\Semestr 4\Java (P)\SOR\client\src\main\java" />
+      <recent name="D:\[INNE]\Dokumenty\Rodzina\Piotr\Szkoła\Studia\Semestr 4\Java (P)\SOR\client" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean javafx:run" />
+      <command value="mvn -pl client exec:java -Dexec.mainClass=&quot;org.psk.SOR.client.Main&quot;" />
+      <command value="mvn -pl client exec:java -Dexec.mainClass=&quot;client.Main&quot;" />
+      <command value="mvn -pl client exec:java -Dexec.mainClass=&quot;org.psk.client.Main&quot; " />
+      <command value="mvn -pl client exec:java -Dexec.mainClass=&quot;org.psk.client.Main&quot;" />
+      <command value="mvn clean" />
+      <command value="mvn dependency:purge-local-repository" />
+      <command value="mvn dependency:resolve" />
+      <command value="mvn dependency:resolve-plugins" />
+      <command value="mvn -pl client dependency:copy-dependencies" />
+      <command value="mvn clean compile" />
+      <command value="mvn -pl client exec:java" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a63cdcf-de77-46b3-8762-7f7ed9ea3d52" name="Changes" comment="" />
+      <created>1682006847323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682006847323</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Init Maven project">
+      <created>1682006932998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682006932998</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added JavaFX dependency">
+      <created>1682104490181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682104490181</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Created directory hierarchy">
+      <created>1682109084507</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682109084507</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed directory hierarchy and pom.xml files. Added module-info files.&#10;&#10;Client and Server now works as expected.">
+      <created>1682178695605</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682178695605</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added basic client scene switching functionality.">
+      <created>1682940750179</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682940750179</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added client application icon and dynamic title.">
+      <created>1682943957205</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682943957205</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added basic server view.">
+      <created>1683039701335</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683039701335</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Reading table number from database on localhost via fixed MAC address and displaying on all customer views.">
+      <created>1683045914613</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683045914613</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added basic client-server connection.">
+      <created>1683129356695</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683129356695</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:org.openjfx:javafx-base" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init Maven project" />
+    <MESSAGE value="Added JavaFX dependency" />
+    <MESSAGE value="Created directory hierarchy" />
+    <MESSAGE value="Fixed directory hierarchy and pom.xml files. Added module-info files.&#10;&#10;Client and Server now works as expected." />
+    <MESSAGE value="Added basic client scene switching functionality." />
+    <MESSAGE value="Added client application icon and dynamic title." />
+    <MESSAGE value="Added basic server view." />
+    <MESSAGE value="Reading table number from database on localhost via fixed MAC address and displaying on all customer views." />
+    <MESSAGE value="Added basic client-server connection." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic client-server connection." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

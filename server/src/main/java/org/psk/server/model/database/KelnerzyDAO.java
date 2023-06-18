@@ -9,14 +9,26 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa obsługująca wyszukanie kelnera w bazie.
+ */
 public class KelnerzyDAO implements DAO {
   private Connection connection;
 
+  /**
+   * Nawiązanie połączenia.
+   * @param connection Uchwyt na połączenie do bazy.
+   */
   @Override
   public void setConnection(Connection connection) {
     this.connection = connection;
   }
 
+  /**
+   * Pobranie wszystkich kelnerów z bazy.
+   * @return Lista kelnerów.
+   * @throws SQLException
+   */
   public List<Kelner> getAllKelnerzy() throws SQLException {
     List<Kelner> kelnerzy = new ArrayList<>();
     String query = "SELECT id, imie, nazwisko FROM kelnerzy";

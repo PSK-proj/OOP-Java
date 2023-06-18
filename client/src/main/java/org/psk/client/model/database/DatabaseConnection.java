@@ -7,9 +7,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Klasa obsługująca połączenie z bazą danych.
+ */
 public class DatabaseConnection {
   private static Connection connection;
 
+  /**
+   * Nawiązaywanie połączenia z bazą danych.
+   * @return Uchwyt połączenia do bazy danych.
+   * @throws SQLException
+   * @throws IOException
+   */
   public static Connection getConnection() throws SQLException, IOException {
     if (connection == null || connection.isClosed()) {
       String url = ConfigLoadHelper.getDbUrl();
@@ -22,6 +31,10 @@ public class DatabaseConnection {
     return connection;
   }
 
+   /**
+   * Zamykanie połączenia z bazą danych.
+   * @throws SQLException
+   */
   public static void closeConnection() throws SQLException {
     if (connection != null && !connection.isClosed()) {
       connection.close();

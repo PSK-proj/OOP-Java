@@ -16,12 +16,21 @@ import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Kontroler obsługujący połączenie z serwerem.
+ */
 public class ConnectionController implements Initializable {
 
   private static final Logger logger = LogManager.getLogger(ConnectionController.class);
 
   @FXML
   private Label info;
+
+  /**
+   * Metoda inicjalizacji.
+   * @param location
+   * @param resources
+   */
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     new Thread(() -> {
@@ -35,7 +44,6 @@ public class ConnectionController implements Initializable {
         logger.info("Połączono z serwerem");
 
         // Przełącz na kolejny widok (np. menuView) po pomyślnym połączeniu z serwerem
-        // ...
         SearchForTableNumber.search();
         try {
           MenuHelper.showMenu(info);

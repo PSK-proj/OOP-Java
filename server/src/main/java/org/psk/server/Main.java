@@ -24,16 +24,29 @@ public class Main extends Application {
     stage.setTitle("La Dolce Vita - Serwer");
     stage.show();
   }
+
+  /**
+   * Metoda zatrzymująca serwer.
+   */
   @Override
   public void stop() {
     if (serverController != null) {
       serverController.stopServer();
     }
   }
+  /**
+   * Metoda ładująca plik CSS.
+   * @return CSS przygotowany do użycia w widoku.
+   */
   public static String loadCSS() {
     URL cssURL = Main.class.getResource("/org/psk/server/main.css");
     return Objects.requireNonNull(cssURL).toExternalForm();
   }
+
+  /**
+   * Setter kontrolera serwera.
+   * @param serverController
+   */
   public void setServerController(ServerController serverController) {
     this.serverController = serverController;
   }

@@ -12,6 +12,9 @@ import java.sql.SQLException;
 import java.util.LinkedHashSet;
 import java.util.List;
 
+/**
+ * Klasa odpowiedzialna za wybór potraw i zapisanie ich do listy.
+ */
 public class MenuManager {
 
   final LinkedHashSet<PotrawaWrapper> selectedNapoje = new LinkedHashSet<>();
@@ -190,6 +193,10 @@ public class MenuManager {
     });
   }
 
+  /**
+   * Metoda zwracająca wybrane potrawy ze wszystkich kategorii (całe zamówienie).
+   * @return Zbiór wybranych potraw.
+   */
   public LinkedHashSet<PotrawaWrapper> getSelectedPotrawy() {
     LinkedHashSet<PotrawaWrapper> selectedPotrawy = new LinkedHashSet<>();
     selectedPotrawy.addAll(selectedNapoje);

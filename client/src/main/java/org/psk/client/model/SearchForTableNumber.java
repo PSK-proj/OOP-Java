@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.sql.SQLException;
 
+/**
+ * Klasa odpowiedzialna za obsługę przydzielania numeru stolika.
+ */
 public class SearchForTableNumber {
   private static final Logger logger = LogManager.getLogger(SearchForTableNumber.class);
   private static final StolikiDAO stolikiDAO;
@@ -25,6 +28,9 @@ public class SearchForTableNumber {
     clientSocket = ConnectionManager.getSocket();
   }
 
+  /**
+   * Metoda żądająca numeru stolika dla przekazanego adresu MAC.
+   */
   public static void search() {
     try {
       String macAddress = MacAddressFinder.getMacAddress(clientSocket);

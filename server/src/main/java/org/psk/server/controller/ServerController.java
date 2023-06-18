@@ -21,6 +21,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Kontroler serwera.
+ */
 public class ServerController implements Initializable {
   private static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(ServerController.class);
   public ServerSocket serverSocket;
@@ -39,6 +42,11 @@ public class ServerController implements Initializable {
 
   private LogManager logManager;
 
+  /**
+   * Metoda inicjalizacji.
+   * @param location
+   * @param resources
+   */
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     logManager = LogManager.getInstance(historyList);
@@ -88,6 +96,9 @@ public class ServerController implements Initializable {
     this.mainApp = mainApp;
   }
 
+  /**
+   * Metoda zatrzymująca serwer.
+   */
   public void stopServer() {
     if (handler != null) {
       handler.closeConnection();
@@ -101,6 +112,9 @@ public class ServerController implements Initializable {
     }
   }
 
+  /**
+   * Metoda przypisująca zakładkom kolejnych kelnerów.
+   */
   private void setTabNames() {
     try {
       KelnerzyDAO kelnerzyDAO = new KelnerzyDAO();
